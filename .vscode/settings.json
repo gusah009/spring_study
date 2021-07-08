@@ -1,3 +1,6 @@
 {
-  "java.configuration.updateBuildConfiguration": "automatic"
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "maven.executable.path":"C:\\Java\\apache-maven-3.8.1\\bin\\mvn.cmd",
+  "java.home": "C:\\Java\\jdk-14.0.1",
+  "maven.view": "flat"
 }
