@@ -1,7 +1,7 @@
-package project;
+package project.BusinessCard;
 
-import project.dao.BusinessCardManagerDao;
-import project.dto.BusinessCard;
+import project.BusinessCard.dao.BusinessCardManagerDao;
+import project.BusinessCard.dto.BusinessCard;
 
 import java.util.List;
 import java.util.Scanner;

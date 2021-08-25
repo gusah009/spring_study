@@ -1,4 +1,4 @@
-package project.dto;
+package project.BusinessCard.dto;
 
 import java.util.Date;
 

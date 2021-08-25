@@ -1,6 +1,6 @@
-package project.dao;
+package project.BusinessCard.dao;
 
-import project.dto.BusinessCard;
+import project.BusinessCard.dto.BusinessCard;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
