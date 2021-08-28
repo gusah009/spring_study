@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userBean" class="com.example.demo.DemoApplication"></bean>
+    <bean id="e" class="com.example.demo.Engine"/>
+    <bean id="car" class="com.example.demo.Car">
+        <property name="engine" ref="e"></property>
+    </bean>
+<!--    위의 코드는 아래를 의미합니다  -->
+<!--    Engine e = new Engine();    -->
+<!--    Car c = new Car();          -->
+<!--    c.setEngine( e );           -->
+</beans>
