@@ -19,8 +19,14 @@ dependencies {
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
     implementation 'javax.servlet:jstl:1.2'
     implementation 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.3'
+    implementation 'junit:junit:4.13.1'
     runtimeOnly 'mysql:mysql-connector-java:8.0.25'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.4'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testImplementation 'org.hamcrest:hamcrest-library:2.2'
+    testImplementation 'org.mockito:mockito-core:3.11.2'
+    testImplementation 'org.mockito:mockito-junit-jupiter:3.11.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }
 
 test {
