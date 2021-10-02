@@ -6,12 +6,14 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
 @Configuration
-//@MapperScan(basePackages = {"org.zerock.mapper"})
+@MapperScan(basePackages = {"org.zerock.mapper"})
+@ComponentScan(basePackages = {"org.zerock.service", "org.zerock.domain"})
 public class RootConfig {
     @Bean
     public DataSource dataSource() {
