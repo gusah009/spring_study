@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eacbd300-0046-4374-acf5-6f612b3214f1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex2/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../ex2/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex2/src/main/java/org/zerock/service/BoardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ex2/src/main/java/org/zerock/service/BoardServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +95,7 @@
       <recent name="C:\Users\minion\Desktop\2021-summer\spring_study\keeper_study" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DataSourceTest.testMyBatis">
+  <component name="RunManager" selected="Tomcat Server.desktopTomcat">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -398,6 +400,7 @@
       <workItem from="1632568653053" duration="727000" />
       <workItem from="1632569398503" duration="7726000" />
       <workItem from="1633004879012" duration="2523000" />
+      <workItem from="1634957670771" duration="818000" />
     </task>
     <servers />
   </component>
