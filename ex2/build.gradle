@@ -50,6 +50,9 @@ dependencies {
 
     implementation files('libs/ojdbc8.jar')
     testImplementation files('libs/ojdbc8.jar')
+
+    implementation 'javax.servlet:jstl:1.2'
+    compileOnly 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.1'
 }
 
 test {
