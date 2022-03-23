@@ -1,5 +1,6 @@
 package inflearn.yeonghan.basic;
 
+import inflearn.yeonghan.basic.aop.TimeTraceAop;
 import inflearn.yeonghan.basic.repository.MemberRepository;
 import inflearn.yeonghan.basic.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
