@@ -2,9 +2,11 @@ package inflearn.yeonghan.basic;
 
 import inflearn.yeonghan.basic.repository.JdbcMemberRepository;
 import inflearn.yeonghan.basic.repository.JdbcTemplateMemberRepository;
+import inflearn.yeonghan.basic.repository.JpaMemberRepository;
 import inflearn.yeonghan.basic.repository.MemberRepository;
 import inflearn.yeonghan.basic.repository.MemoryMemberRepository;
 import inflearn.yeonghan.basic.service.MemberService;
+import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -13,12 +15,19 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SpringConfig {
 
-  DataSource dataSource;
+  EntityManager em;
 
   @Autowired
-  public SpringConfig(DataSource dataSource) {
-    this.dataSource = dataSource;
+  public SpringConfig(EntityManager em) {
+    this.em = em;
   }
+
+//  DataSource dataSource;
+
+//  @Autowired
+//  public SpringConfig(DataSource dataSource) {
+//    this.dataSource = dataSource;
+//  }
 
   @Bean
   public MemberService memberService() {
@@ -32,7 +41,8 @@ public class SpringConfig {
   @Bean
   public MemberRepository memberRepository() {
 //    return new JdbcMemberRepository(dataSource);
-    return new JdbcTemplateMemberRepository(dataSource);
+//    return new JdbcTemplateMemberRepository(dataSource);
+    return new JpaMemberRepository(em);
   }
 
 }
