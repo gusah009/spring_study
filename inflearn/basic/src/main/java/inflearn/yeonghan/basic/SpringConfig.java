@@ -1,6 +1,7 @@
 package inflearn.yeonghan.basic;
 
 import inflearn.yeonghan.basic.repository.JdbcMemberRepository;
+import inflearn.yeonghan.basic.repository.JdbcTemplateMemberRepository;
 import inflearn.yeonghan.basic.repository.MemberRepository;
 import inflearn.yeonghan.basic.repository.MemoryMemberRepository;
 import inflearn.yeonghan.basic.service.MemberService;
@@ -30,6 +31,8 @@ public class SpringConfig {
    */
   @Bean
   public MemberRepository memberRepository() {
-    return new JdbcMemberRepository(dataSource);
+//    return new JdbcMemberRepository(dataSource);
+    return new JdbcTemplateMemberRepository(dataSource);
   }
+
 }
