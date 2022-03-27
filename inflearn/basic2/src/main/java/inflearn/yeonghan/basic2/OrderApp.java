@@ -6,16 +6,22 @@ import inflearn.yeonghan.basic2.member.Member;
 import inflearn.yeonghan.basic2.member.MemberService;
 import inflearn.yeonghan.basic2.order.Order;
 import inflearn.yeonghan.basic2.order.OrderService;
+import org.apache.catalina.core.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 
 public class OrderApp {
 
   public static void main(String[] args) {
-    AppConfig appConfig = new AppConfig();
-//    MemberService memberService = new MemberServiceImpl();
-//    OrderService orderService = new OrderServiceImpl();
-    MemberService memberService = appConfig.memberService();
-    OrderService orderService = appConfig.orderService();
+//    AppConfig appConfig = new AppConfig();
+//    MemberService memberService = appConfig.memberService();
+//    OrderService orderService = appConfig.orderService();
+
+    AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(
+        AppConfig.class);
+
+    MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
+    OrderService orderService = applicationContext.getBean("orderService", OrderService.class);
 
     long memberId = 1L;
 
