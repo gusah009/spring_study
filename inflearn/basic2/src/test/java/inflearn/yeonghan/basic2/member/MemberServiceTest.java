@@ -1,11 +1,20 @@
 package inflearn.yeonghan.basic2.member;
 
+import inflearn.yeonghan.basic2.config.AppConfig;
+import inflearn.yeonghan.basic2.order.OrderService;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class MemberServiceTest {
 
-  MemberService memberService = new MemberServiceImpl();
+  MemberService memberService;
+
+  @BeforeEach
+  public void beforeEach() {
+    AppConfig appConfig = new AppConfig();
+    memberService = appConfig.memberService();
+  }
 
   @Test
   void join() {

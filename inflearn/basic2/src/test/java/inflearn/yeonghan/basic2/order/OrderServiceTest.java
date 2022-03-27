@@ -1,18 +1,24 @@
 package inflearn.yeonghan.basic2.order;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import inflearn.yeonghan.basic2.config.AppConfig;
 import inflearn.yeonghan.basic2.member.Grade;
 import inflearn.yeonghan.basic2.member.Member;
 import inflearn.yeonghan.basic2.member.MemberService;
-import inflearn.yeonghan.basic2.member.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class OrderServiceTest {
 
-  MemberService memberService = new MemberServiceImpl();
-  OrderService orderService = new OrderServiceImpl();
+  MemberService memberService;
+  OrderService orderService;
+
+  @BeforeEach
+  public void beforeEach() {
+    AppConfig appConfig = new AppConfig();
+    memberService = appConfig.memberService();
+    orderService = appConfig.orderService();
+  }
 
   @Test
   void createOrder() {

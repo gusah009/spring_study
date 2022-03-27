@@ -1,4 +1,4 @@
-package inflearn.yeonghan.basic2.order;
+package inflearn.yeonghan.basic2.discount;
 
 import inflearn.yeonghan.basic2.member.Grade;
 import inflearn.yeonghan.basic2.member.Member;

@@ -1,14 +1,19 @@
 package inflearn.yeonghan.basic2;
 
+import inflearn.yeonghan.basic2.config.AppConfig;
 import inflearn.yeonghan.basic2.member.Grade;
 import inflearn.yeonghan.basic2.member.Member;
 import inflearn.yeonghan.basic2.member.MemberService;
 import inflearn.yeonghan.basic2.member.MemberServiceImpl;
+import inflearn.yeonghan.basic2.order.OrderService;
 
 public class MemberApp {
 
   public static void main(String[] args) {
-    MemberService memberService = new MemberServiceImpl();
+    AppConfig appConfig = new AppConfig();
+//    MemberService memberService = new MemberServiceImpl();
+    MemberService memberService = appConfig.memberService();
+
     Member member = new Member(1L, "memberA", Grade.VIP);
     memberService.join(member);
 
