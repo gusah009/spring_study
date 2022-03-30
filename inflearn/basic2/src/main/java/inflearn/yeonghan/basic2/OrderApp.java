@@ -6,7 +6,6 @@ import inflearn.yeonghan.basic2.member.Member;
 import inflearn.yeonghan.basic2.member.MemberService;
 import inflearn.yeonghan.basic2.order.Order;
 import inflearn.yeonghan.basic2.order.OrderService;
-import org.apache.catalina.core.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 
