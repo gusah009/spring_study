@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Member {
+public class HelloJpaMember {
 
   @Id
   private Long id;

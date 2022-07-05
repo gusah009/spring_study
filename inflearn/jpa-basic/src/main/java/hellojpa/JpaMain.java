@@ -36,10 +36,10 @@ public class JpaMain {
 //      findMember.setName("HelloJPA");
 
       // JPQL - SQL을 추상화한 객체 지향 쿼리 언어
-      List<Member> result = em.createQuery("select m from Member as m", Member.class)
+      List<HelloJpaMember> result = em.createQuery("select m from HelloJpaMember as m", HelloJpaMember.class)
           .getResultList();
 
-      for (Member member : result) {
+      for (HelloJpaMember member : result) {
         System.out.println("member.getName() = " + member.getName());
       }
 
