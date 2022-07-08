@@ -8,6 +8,7 @@
     <class>entityMapping.EntityMappingMember</class>
     <class>associationMapping.AssoicationMember</class>
     <class>associationMapping.AssoicationTeam</class>
+    <class>associationMapping.AssocationLocker</class>
     <properties>
       <!-- 필수 속성 -->
       <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>

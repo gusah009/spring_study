@@ -23,9 +23,14 @@ public class Main {
       team.setName("teamA");
       em.persist(team);
 
+      AssocationLocker lockerA = new AssocationLocker();
+      lockerA.setName("lockerA");
+      em.persist(lockerA);
+
       AssoicationMember memberA = new AssoicationMember();
       memberA.setUsername("memberA");
       memberA.setTeam(team);
+      memberA.setLocker(lockerA);
       em.persist(memberA);
       AssoicationMember memberB = new AssoicationMember();
       memberB.setUsername("memberB");
@@ -44,9 +49,14 @@ public class Main {
         System.out.println("teamA's member = " + member.getUsername());
       }
 
+      AssocationLocker findLocker = em.find(AssocationLocker.class, lockerA.getId());
+      System.out.println(findLocker.getName() + "'s owner: "
+          + findLocker.getMember().getUsername());
+
       tx.commit();
     } catch (Exception e) {
       tx.rollback();
+      e.printStackTrace();
     } finally {
       em.close();
     }
