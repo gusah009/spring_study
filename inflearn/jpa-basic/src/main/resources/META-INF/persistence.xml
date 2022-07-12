@@ -9,6 +9,11 @@
     <class>associationMapping.AssoicationMember</class>
     <class>associationMapping.AssoicationTeam</class>
     <class>associationMapping.AssocationLocker</class>
+    <class>inheritanceMapping.InheritanceItem</class>
+    <class>inheritanceMapping.InheritanceAlbum</class>
+    <class>inheritanceMapping.InheritanceBook</class>
+    <class>inheritanceMapping.InheritanceMovie</class>
+
     <properties>
       <!-- 필수 속성 -->
       <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
@@ -20,7 +25,7 @@
       <property name="hibernate.show_sql" value="true"/>
       <property name="hibernate.format_sql" value="true"/>
       <property name="hibernate.use_sql_comments" value="true"/>
-      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <property name="hibernate.hbm2ddl.auto" value="create"/>
     </properties>
   </persistence-unit>
   <persistence-unit name="jpashop">
@@ -28,6 +33,12 @@
     <class>jpashop.domain.Member</class>
     <class>jpashop.domain.Order</class>
     <class>jpashop.domain.OrderItem</class>
+    <class>jpashop.domain.Category</class>
+    <class>jpashop.domain.Delivery</class>
+    <class>jpashop.domain.CategoryItem</class>
+    <class>jpashop.domain.Movie</class>
+    <class>jpashop.domain.Album</class>
+    <class>jpashop.domain.Book</class>
     <properties>
       <!-- 필수 속성 -->
       <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
