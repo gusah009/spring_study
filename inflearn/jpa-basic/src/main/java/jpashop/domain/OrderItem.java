@@ -17,7 +17,7 @@ import lombok.Setter;
 @Setter
 @Table(name = "order_item")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class OrderItem {
+public class OrderItem extends BaseEntity {
 
   @Id
   @GeneratedValue

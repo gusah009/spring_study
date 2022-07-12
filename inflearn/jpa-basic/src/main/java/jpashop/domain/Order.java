@@ -14,7 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Order {
+public class Order extends BaseEntity {
 
   @Id
   @GeneratedValue
@@ -24,6 +24,10 @@ public class Order {
   @ManyToOne
   @JoinColumn(name = "member_id")
   private Member member;
+
+  @OneToOne
+  @JoinColumn(name = "delevery_id")
+  private Delivery delivery;
 
   private LocalDateTime orderDate; // 주문시간
 
