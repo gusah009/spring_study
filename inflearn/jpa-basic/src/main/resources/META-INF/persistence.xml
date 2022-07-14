@@ -13,6 +13,10 @@
     <class>inheritanceMapping.InheritanceAlbum</class>
     <class>inheritanceMapping.InheritanceBook</class>
     <class>inheritanceMapping.InheritanceMovie</class>
+    <class>proxy.ProxyMember</class>
+    <class>proxy.ProxyTeam</class>
+    <class>proxy.ProxyParent</class>
+    <class>proxy.ProxyChild</class>
 
     <properties>
       <!-- 필수 속성 -->
