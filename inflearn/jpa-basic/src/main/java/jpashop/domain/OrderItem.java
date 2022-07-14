@@ -1,5 +1,7 @@
 package jpashop.domain;
 
+import static javax.persistence.FetchType.LAZY;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,11 +26,11 @@ public class OrderItem extends BaseEntity {
   @Column(name = "order_item_id")
   private Long id;
 
-  @ManyToOne
+  @ManyToOne(fetch = LAZY)
   @JoinColumn(name = "item_id")
   private Item item;
 
-  @ManyToOne
+  @ManyToOne(fetch = LAZY)
   @JoinColumn(name = "order_id")
   private Order order;
 
