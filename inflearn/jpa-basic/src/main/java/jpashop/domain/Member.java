@@ -3,6 +3,7 @@ package jpashop.domain;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,9 +21,9 @@ public class Member extends BaseEntity {
   @Column(name = "member_id")
   private Long id;
   private String name;
-  private String city;
-  private String street;
-  private String zipcode;
+
+  @Embedded
+  private Address address;
 
   @OneToMany(mappedBy = "member")
   List<Order> orders = new ArrayList<>();
