@@ -18,6 +18,10 @@
     <class>proxy.ProxyParent</class>
     <class>proxy.ProxyChild</class>
     <class>valueType.ValueTypeMember</class>
+    <class>jpql.MemberJPQL</class>
+    <class>jpql.TeamJPQL</class>
+    <class>jpql.ProductJPQL</class>
+    <class>jpql.OrderJPQL</class>
 
     <properties>
       <!-- 필수 속성 -->
