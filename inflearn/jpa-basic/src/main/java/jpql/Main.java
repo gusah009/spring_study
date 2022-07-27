@@ -10,7 +10,6 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import jpashop.domain.Book;
 
 public class Main {
 
@@ -33,6 +32,8 @@ public class Main {
       join(em);
       conditionalExpression(em);
 
+      fetchJoinBasic(em);
+      bulk(em);
       tx.commit();
     } catch (
         Exception e) {
@@ -43,6 +44,50 @@ public class Main {
     }
 
     emf.close();
+  }
+
+  private static void bulk(EntityManager em) {
+    int resultCount = em.createQuery("update MemberJPQL m set m.age = 20").executeUpdate();
+    System.out.println("resultCount = " + resultCount);
+  }
+
+  private static void fetchJoinBasic(EntityManager em) {
+    TeamJPQL teamA = createTeam("teamA", em);
+    TeamJPQL teamB = createTeam("teamB", em);
+    createMember("MO1", teamA, em);
+    createMember("MO2", teamA, em);
+    createMember("MO3", teamB, em);
+    createMember("MO4", null, em);
+    em.flush();
+    em.clear();
+
+//    String slowQuery = "select m From MemberJPQL m";
+    String fastQuery = "select m From MemberJPQL m join fetch m.team";
+    List<MemberJPQL> result = em.createQuery(fastQuery, MemberJPQL.class)
+        .getResultList();
+    for (MemberJPQL member : result) {
+      if (member.getTeam() == null) {
+        System.out.println(
+            "member = " + member.getUsername() + ", null");
+      } else {
+        System.out.println(
+            "member = " + member.getUsername() + ", " + member.getTeam().getName());
+      }
+    }
+  }
+
+  private static TeamJPQL createTeam(String teamName, EntityManager em) {
+    TeamJPQL team = new TeamJPQL();
+    team.setName(teamName);
+    em.persist(team);
+    return team;
+  }
+
+  private static void createMember(String userName, TeamJPQL team, EntityManager em) {
+    MemberJPQL member4 = new MemberJPQL();
+    member4.setUsername(userName);
+    member4.setTeam(team);
+    em.persist(member4);
   }
 
   private static void conditionalExpression(EntityManager em) {
@@ -68,9 +113,7 @@ public class Main {
   }
 
   private static void join(EntityManager em) {
-    TeamJPQL team = new TeamJPQL();
-    team.setName("team1");
-    em.persist(team);
+    TeamJPQL team = createTeam("team1", em);
     MemberJPQL member = new MemberJPQL();
     member.setAge(10);
     member.setUsername("MO");
@@ -119,9 +162,7 @@ public class Main {
   }
 
   private static void selectProjection(EntityManager em) {
-    TeamJPQL team = new TeamJPQL();
-    team.setName("team1");
-    em.persist(team);
+    TeamJPQL team = createTeam("team1", em);
     MemberJPQL member = new MemberJPQL();
     member.setAge(10);
     member.setUsername("MO");
