@@ -1,9 +1,11 @@
 package jpashop.jpabook.service;
 
+import java.util.List;
 import jpashop.jpabook.domain.Delivery;
 import jpashop.jpabook.domain.Member;
 import jpashop.jpabook.domain.Order;
 import jpashop.jpabook.domain.OrderItem;
+import jpashop.jpabook.domain.OrderSearch;
 import jpashop.jpabook.domain.item.Item;
 import jpashop.jpabook.repository.ItemRepository;
 import jpashop.jpabook.repository.MemberRepository;
@@ -50,5 +52,7 @@ public class OrderService {
   }
 
   //검색
-
+  public List<Order> findOrders(OrderSearch orderSearch) {
+    return orderRepository.findAllByCriteria(orderSearch);
+  }
 }

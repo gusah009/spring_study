@@ -7,6 +7,9 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
 
 decorator:
   datasource:
