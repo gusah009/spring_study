@@ -63,7 +63,7 @@ class ItemRepositoryTest {
 
   @Test
   void findItems() {
-    //given
+    //given 
     Item item1 = new Item("itemA-1", 10000, 10);
     Item item2 = new Item("itemA-2", 20000, 20);
     Item item3 = new Item("itemB-1", 30000, 30);
